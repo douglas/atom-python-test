@@ -12,10 +12,10 @@ module.exports =
         throw "Unknown scope: #{scope}"
 
     @testFileCommand: (testFramework) ->
-      atom.config.get("ruby-test.#{testFramework}FileCommand")
+      atom.config.get("python-test.#{testFramework}FileCommand")
 
     @testAllCommand: (testFramework) ->
-      atom.config.get("ruby-test.#{testFramework}AllCommand")
+      atom.config.get("python-test.#{testFramework}AllCommand")
 
     @testSingleCommand: (testFramework) ->
-      atom.config.get("ruby-test.#{testFramework}SingleCommand")
+      atom.config.get("python-test.#{testFramework}SingleCommand")

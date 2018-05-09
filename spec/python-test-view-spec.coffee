@@ -1,5 +1,5 @@
 {$$} = require 'atom-space-pen-views'
-RubyTestView = require '../lib/ruby-test-view'
+RubyTestView = require '../lib/python-test-view'
 TestRunner = require '../lib/test-runner'
 
 describe "RubyTestView", ->
@@ -118,7 +118,7 @@ describe "RubyTestView", ->
       fileOpened = false
       testRunnerInitializeParams = null
 
-    # Reproduce https://github.com/moxley/atom-ruby-test/issues/33:
+    # Reproduce https://github.com/moxley/atom-python-test/issues/33:
     # "Uncaught TypeError: Cannot read property 'save' of undefined"
     describe "::testAll", ->
       it "instantiates TestRunner and calls ::run on it", ->

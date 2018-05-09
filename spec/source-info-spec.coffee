@@ -74,7 +74,7 @@ describe "SourceInfo", ->
     describe "RSpec detection", ->
       it "detects RSpec based on configuration value set to 'rspec'", ->
         withSetup
-          config: "ruby-test.specFramework": "rspec"
+          config: "python-test.specFramework": "rspec"
           projectPaths: ['/home/user/project_1']
           testFile: '/home/user/project_1/bar/foo_spec.rb'
           currentLine: 1
@@ -84,7 +84,7 @@ describe "SourceInfo", ->
 
       it "selects RSpec for spec file if spec_helper is required", ->
         withSetup
-          config: "ruby-test.specFramework": ""
+          config: "python-test.specFramework": ""
           projectPaths: ['/home/user/project_1']
           testFile: '/home/user/project_1/bar/foo_spec.rb'
           currentLine: 5
@@ -102,7 +102,7 @@ describe "SourceInfo", ->
 
       it "selects RSpec for spec file if spec_helper is required with require_relative", ->
         withSetup
-          config: "ruby-test.specFramework": ""
+          config: "python-test.specFramework": ""
           projectPaths: ['/home/user/project_1']
           testFile: '/home/user/project_1/bar/foo_spec.rb'
           currentLine: 2
@@ -115,7 +115,7 @@ describe "SourceInfo", ->
 
       it "selects RSpec for spec file if expect() is called", ->
         withSetup
-          config: "ruby-test.specFramework": ""
+          config: "python-test.specFramework": ""
           projectPaths: ['/home/user/project_1']
           testFile: '/home/user/project_1/bar/foo_spec.rb'
           currentLine: 5
@@ -132,7 +132,7 @@ describe "SourceInfo", ->
     describe "Minitest detection", ->
       it "is Minitest if filename matches _test.rb, and file contains specs", ->
         withSetup
-          config: "ruby-test.specFramework": ""
+          config: "python-test.specFramework": ""
           projectPaths: ['/home/user/project_1']
           testFile: '/home/user/project_1/bar/foo_test.rb'
           currentLine: 3
@@ -148,7 +148,7 @@ describe "SourceInfo", ->
 
       it "detects Minitest based on configuration value set to 'minitest'", ->
         withSetup
-          config: "ruby-test.specFramework": "minitest"
+          config: "python-test.specFramework": "minitest"
           projectPaths: ['/home/user/project_1']
           testFile: '/home/user/project_1/bar/foo_spec.rb'
           currentLine: 1
@@ -173,7 +173,7 @@ describe "SourceInfo", ->
 
       it "when no test file is open, detects Minitest based on configuration value set to 'minitest'", ->
         withSetup
-          config: "ruby-test.specFramework": "minitest"
+          config: "python-test.specFramework": "minitest"
           projectPaths: ['/home/user/project_1']
           testFile: null
           currentLine: null

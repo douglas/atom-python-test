@@ -1,0 +1,24 @@
+# Keybindings require three things to be fully defined: A selector that is
+# matched against the focused element, the keystroke and the command to
+# execute.
+#
+# Below is a basic keybinding which registers on all platforms by applying to
+# the root workspace element.
+
+# For more detailed documentation see
+# https://atom.io/docs/latest/advanced/keymaps
+'.platform-darwin atom-workspace':
+  'cmd-ctrl-x': 'python-test:toggle'
+  'cmd-ctrl-y': 'python-test:test-all'
+  'cmd-ctrl-t': 'python-test:test-file'
+  'cmd-ctrl-r': 'python-test:test-single'
+  'cmd-ctrl-e': 'python-test:test-previous'
+  'cmd-ctrl-c': 'python-test:cancel'
+
+'.platform-linux atom-workspace':
+  'ctrl-shift-c': 'python-test:cancel'
+  'ctrl-shift-e': 'python-test:test-previous'
+  'ctrl-shift-r': 'python-test:test-single'
+  'ctrl-shift-t': 'python-test:test-file'
+  'ctrl-shift-x': 'python-test:toggle'
+  'ctrl-shift-y': 'python-test:test-all'

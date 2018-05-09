@@ -7,17 +7,17 @@ Convert = require 'ansi-to-html'
 module.exports =
 class RubyTestView extends View
   @content: ->
-    @div class: "ruby-test inset-panel panel-bottom native-key-bindings", tabindex: -1, =>
+    @div class: "python-test inset-panel panel-bottom native-key-bindings", tabindex: -1, =>
 
   initialize: (serializeState, terminal) ->
     @terminal = terminal;
     sourceInfo = new SourceInfo()
-    atom.commands.add "atom-workspace", "ruby-test:toggle", => @toggle()
-    atom.commands.add "atom-workspace", "ruby-test:test-file", => @testFile()
-    atom.commands.add "atom-workspace", "ruby-test:test-single", => @testSingle()
-    atom.commands.add "atom-workspace", "ruby-test:test-previous", => @testPrevious()
-    atom.commands.add "atom-workspace", "ruby-test:test-all", => @testAll()
-    atom.commands.add "atom-workspace", "ruby-test:cancel", => @cancelTest()
+    atom.commands.add "atom-workspace", "python-test:toggle", => @toggle()
+    atom.commands.add "atom-workspace", "python-test:test-file", => @testFile()
+    atom.commands.add "atom-workspace", "python-test:test-single", => @testSingle()
+    atom.commands.add "atom-workspace", "python-test:test-previous", => @testPrevious()
+    atom.commands.add "atom-workspace", "python-test:test-all", => @testAll()
+    atom.commands.add "atom-workspace", "python-test:cancel", => @cancelTest()
 
   # Returns an object that can be retrieved when package is activated
   serialize: ->
@@ -62,7 +62,7 @@ class RubyTestView extends View
   showPanel: ->
     unless @hasParent()
       atom.workspace.addBottomPanel(item: @)
-      @spinner = @find('.ruby-test-spinner')
+      @spinner = @find('.python-test-spinner')
 
   cancelTest: ->
     atom.commands.dispatch(@currentEditor(), 'platformio-ide-terminal:close')

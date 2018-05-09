@@ -1,4 +1,4 @@
-RubyTestView = require './ruby-test-view'
+RubyTestView = require './python-test-view'
 
 module.exports =
   config:
@@ -54,17 +54,17 @@ module.exports =
       type: 'string'
       default: ''
       enum: ['', 'rspec', 'minitest']
-      description: 'RSpec and Minitest spec files look very similar to each other, and ruby-test often can\'t tell them apart. Choose your preferred *_spec.rb framework.'
+      description: 'RSpec and Minitest spec files look very similar to each other, and python-test often can\'t tell them apart. Choose your preferred *_spec.rb framework.'
     testFramework:
       type: 'string'
       default: ''
       enum: ['', 'minitest', 'test']
-      description: 'Minitest test files and Test::Unit files look very similar to each other, and ruby-test often can\'t tell them apart. Choose your preferred *_test.rb framework.'
+      description: 'Minitest test files and Test::Unit files look very similar to each other, and python-test often can\'t tell them apart. Choose your preferred *_test.rb framework.'
 
   rubyTestView: null
 
   activate: (@state) ->
-    require('atom-package-deps').install('ruby-test')
+    require('atom-package-deps').install('python-test')
 
   consumeRunInTerminal: (runInTerminalProvider) ->
     @rubyTestView = new RubyTestView(@state.rubyTestViewState, runInTerminalProvider)

@@ -123,10 +123,10 @@ module.exports =
         if not @activeFile()
           null
         else if matches = @activeFile().match(/_(test|spec)\.rb$/)
-          if matches[1] == 'test' and atom.config.get("ruby-test.testFramework")
-            atom.config.get("ruby-test.testFramework")
-          else if matches[1] == 'spec' and atom.config.get("ruby-test.specFramework")
-            atom.config.get("ruby-test.specFramework")
+          if matches[1] == 'test' and atom.config.get("python-test.testFramework")
+            atom.config.get("python-test.testFramework")
+          else if matches[1] == 'spec' and atom.config.get("python-test.specFramework")
+            atom.config.get("python-test.specFramework")
           else if @fileFramework() == 'minitest' or (not @fileFramework() and matches[1] == 'test' and @testStyle() == 'spec')
             'minitest'
           else if matches[1] == 'spec'
@@ -138,9 +138,9 @@ module.exports =
 
     projectType: ->
       if fs.existsSync(@projectPath() + '/test')
-        atom.config.get("ruby-test.testFramework") || 'test'
+        atom.config.get("python-test.testFramework") || 'test'
       else if fs.existsSync(@projectPath() + '/spec')
-        atom.config.get("ruby-test.specFramework") || 'rspec'
+        atom.config.get("python-test.specFramework") || 'rspec'
       else if fs.existsSync(@projectPath() + '/features')
         'cucumber'
       else

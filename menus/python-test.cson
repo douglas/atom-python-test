@@ -1,0 +1,23 @@
+# See https://atom.io/docs/latest/creating-a-package#menus for more details
+'context-menu':
+  '.overlayer': [
+    { 'label': 'Run python-test for file', 'command': 'python-test:test-file' }
+    { 'label': 'Run python-test at line', 'command': 'python-test:test-single' }
+    { 'label': 'Run python-test for all tests', 'command': 'python-test:test-all' }
+    { 'label': 'Run python-test for previous tests', 'command': 'python-test:test-previous' }
+  ]
+
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'Ruby Test'
+      'submenu': [
+        { 'label': 'Run test file', 'command': 'python-test:test-file' }
+        { 'label': 'Run single test', 'command': 'python-test:test-single' }
+        { 'label': 'Run all tests', 'command': 'python-test:test-all' }
+        { 'label': 'Run previous tests', 'command': 'python-test:test-previous' }
+      ]
+    ]
+  }
+]
